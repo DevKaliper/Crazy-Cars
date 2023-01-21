@@ -1,0 +1,486 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+
+header{
+    background-color: rgb(182, 44, 44) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 10px 15px;
+    flex-direction: column;
+    
+}
+
+/* .logo-nombre img{
+    transition: transform 0.3s ease-in-out;
+    width: 100px;
+    border-radius: 15px; */
+
+
+
+/* .logo-nombre img:hover{
+    transform: scale(1.2);
+} */
+
+.logo-nombre{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+
+}
+
+.logo-nombre h1{
+    transition: font-size 0.3s ease-in-out;
+    
+    font-size: 45px;
+}
+
+.logo-nombre h1:hover{
+    font-size: 55px ;
+}
+
+header nav{
+    display: flex;
+    gap: 15px;
+    font-size: 30px;
+    
+}
+
+header nav a{
+    transition: color .2s linear;
+    text-decoration: none;
+    color: black;
+
+}
+
+header nav a:hover{
+    color: darkgrey;
+}
+
+.busqueda-container{
+    background-color: darkgray;
+    height: auto;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.busqueda-container .titulo-busqueda .Buscatucarro{
+    transition: color 0.2s linear;
+    margin: 0;
+    font-size: 80px;
+    /* background-color: red; */
+}
+
+.busqueda-container .titulo-busqueda .Buscatucarro:hover{
+    color: rgb(182, 44, 44);
+}
+
+.busqueda-container .titulo-busqueda{
+    
+    
+    padding: 20px ;
+    /* background-color: green; */
+    position: relative;
+
+    top: 210px;
+
+}
+.busqueda-container .busqueda-imagen:hover{
+    transform: scale(1.2);
+}
+.busqueda-container .busqueda-imagen{
+    transition: transform 0.2s ease-in-out;
+    width: min-content;
+    
+}
+
+
+
+.busqueda:focus-within{
+    
+        border: solid 1px #aaa;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+
+.busqueda-container .busqueda{
+    position: relative;
+    top: -220px;
+    /* background-color: blue; */
+    display: flex;
+    gap: 10px;
+    border: solid 2px black;
+    /* width: 100%; */
+    align-items: center;
+    margin: 100px auto;
+    flex-direction: row;
+    padding: 5px 10px;
+    border-radius: 30px;
+    
+    
+
+}
+.busqueda-container .busqueda input{
+    flex: auto;
+    border: none;
+    outline: none;
+    font-size: 38px;
+    background: none;
+
+}
+
+.busqueda-container .busqueda .action1 button{
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: black;
+}
+
+.busqueda-container .busqueda .action2 button{
+    
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: black;
+}
+
+.busqueda-container .busqueda .action2 button:hover{
+    color: rgb(182, 44, 44);
+}
+
+.busqueda-container .busqueda .action1 button:hover{
+    color: rgb(182, 44, 44);
+}
+
+.ofertas-container .titulo-ofertas .Ofertas{
+    margin: 0;
+}
+
+
+.ofertas-container{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.ofertas-container .titulo-ofertas:hover{
+    color: rgb(182, 44, 44);
+}
+
+
+.ofertas-container .titulo-ofertas{
+    transition: color 0.2s linear;
+    padding: 20px 25px;
+    font-size: 40px;
+    display: inline-flex;
+}
+
+
+.ofertas-container .carros-container{
+    margin: 50px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.ofertas-container .carros-container .carros .carro-link img{
+    width: 800px;
+    transition: transform 0.3s ease-in-out;
+    /* background-color: red; */
+    display: flex;
+    border-radius: 35px;
+    
+}
+
+.ofertas-container .carros-container .carros{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    
+}
+
+.ofertas-container .carros-container .carros .nombre{
+    background-color: darkgray;
+    border-radius: 10px;
+    min-width: 100px;
+    padding: 10px 15px;
+    width: 120px;
+    text-align: center;
+    position: absolute;
+    margin-top: -470px;
+    display: none;
+
+}
+
+.ofertas-container .carros-container .carros .nombre .text{
+    display: inline-block;
+    /* background-color: blueviolet; */
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 25px;
+    
+}
+
+.ofertas-container .carros-container .carros:hover .nombre{
+    display: inline-block;
+}
+
+.ofertas-container .carros-container .carros .nombre::before{
+    content: "";
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: calc(100%);
+    left: calc(70%);
+
+    border-top: solid 10px darkgray;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px transparent;
+
+
+}
+
+.ofertas-container .carros-container .carros .carro-link img:hover{
+    transform: translateY(-20px);
+}
+
+
+footer{
+    display: flex;
+    background-color: rgb(182, 44, 44);
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    height: auto;
+}
+
+
+.PPcontenedor{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1c56a8;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+
+}
+
+
+.PPcontenedor .PPsubcontenedor{
+    width: 600px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 20px;
+    /* box-sizing: border-box; */
+    box-shadow: 0px 5px 10px rgba(130, 186, 255, 0.5) ;
+    
+
+
+}
+
+.PPcontenedor .PPsubcontenedor .PPcompra{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: auto;
+    margin-bottom: 20px;
+}
+
+.PPcontenedor .PPsubcontenedor .PPcompra .PPimagen img{
+    width: 100px;
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones{
+    display: flex;
+    justify-content: end;
+    padding: 10px 0;
+    gap: 15px;
+
+    
+    
+}
+
+
+.PPcontenedor .PPsubcontenedor .PPbotones .PPimprimir:hover{
+    
+    transform: translateY(-5px);
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones .PPvolver:hover{
+    transform: translateY(-5px);
+    
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones .PPimprimir{
+    
+    
+    transition: transform .3s ease-in-out;
+    background-color: #1c56a8;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones .PPvolver{
+    
+    transition: transform .3s ease-in-out;
+    background-color: darkgray;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones button{
+    border: none;
+    cursor: pointer;
+    min-width: 20px;
+
+}
+
+
+@media (max-width: 900px) {
+    .busqueda-container .busqueda-imagen img{
+        width: auto;
+        display: none;
+    } 
+
+    .busqueda-container .titulo-busqueda .Buscatucarro{
+        font-size: 40px;
+        position: relative;
+        top: -150px;
+    }
+    
+    .busqueda-container .busqueda{
+        top: 0px;
+    }
+}
+
+@media (max-width: 790px){
+    .ofertas-container .carros-container .carros .carro-link img{
+        width: 600px;
+    }
+    .ofertas-container .titulo-ofertas .Ofertas{
+        text-align: center;
+    }
+}
+
+@media (max-width: 690px){
+    .ofertas-container .carros-container .carros .carro-link img{
+        width: 500px;
+    }
+    .ofertas-container .titulo-ofertas .Ofertas{
+        text-align: center;
+    }
+}
+
+@media (max-width: 590px){
+    .ofertas-container .carros-container .carros .carro-link img{
+        width: 400px;
+    }
+
+    .ofertas-container .titulo-ofertas .Ofertas{
+        text-align: center;
+    }
+}
+
+@media (max-width: 490px){
+    .ofertas-container .carros-container .carros .carro-link img{
+        width: 300px;
+    }
+
+    .ofertas-container .titulo-ofertas .Ofertas{
+        text-align: center;
+    }
+}
+
+@media (max-width: 390px){
+    .ofertas-container .carros-container .carros .carro-link img{
+        width: 200px;
+    }
+    .ofertas-container .titulo-ofertas .Ofertas{
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .busqueda-container .busqueda input{
+        font-size: 28px;
+    }
+    
+}
+
+@media (max-width: 478px) {
+    .busqueda-container .busqueda input{
+        font-size: 25px;
+    }
+    
+}
+@media (max-width: 450px) {
+    .busqueda-container .busqueda input{
+        font-size: 20px;
+    }
+    
+}
+
+@media (max-width: 380px) {
+    .busqueda-container .busqueda input{
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 574px) {
+    header nav a{
+        text-align: center;
+        
+    }
+    
+}
+
+@media (max-width: 484px) {
+    .busqueda-container .titulo-busqueda .Buscatucarro{
+        text-align: center;
+        
+    }
+    
+}
+
+@media (max-width: 422px) {
+    .logo-nombre h1{
+        text-align: center;
+    }
+    
+    
+}
+
+.PPcontenedor .PPsubcontenedor .PPbotones .PPindex{
+    text-decoration: none;
+    color: white;
+}
