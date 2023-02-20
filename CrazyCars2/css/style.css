@@ -1,0 +1,687 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  position: relative;
+}
+main header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px 40px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, white 99%, #b62c2c);
+}
+main header h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+main header ul {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+main header ul li {
+  background: white;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 60px;
+  padding: 10px 25px;
+  list-style: none;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+main header ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--1), var(--2));
+  opacity: 0;
+  transition: 0.5s;
+}
+main header ul li::after {
+  content: "";
+  position: absolute;
+  border-radius: 60px;
+  top: 10px;
+  width: 110%;
+  height: 110%;
+  background: linear-gradient(45deg, var(--1), var(--2));
+  filter: blur(15px);
+  opacity: 0;
+  z-index: 1;
+  transition: 0.5s;
+}
+main header ul li:hover {
+  width: 180px;
+  transition-delay: 0.25s;
+  box-shadow: 0px -10px 25px rgba(0, 0, 0, 0);
+}
+main header ul li:hover::after {
+  opacity: 0.5;
+}
+main header ul li:hover::before {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+main header ul li:hover .tittle {
+  transform: scale(1);
+  transition-delay: 0.5s;
+}
+main header ul li:hover .icon {
+  transform: scale(0);
+  transition-delay: 0.3s;
+}
+main header ul li .icon {
+  position: absolute;
+  color: black;
+  font-weight: 900;
+  transform: scale(1);
+  transition: 0.5s;
+  font-size: 1.5em;
+}
+main header ul li .tittle {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  text-align: center;
+  transform: scale(0);
+  color: white;
+  font-weight: 700;
+  transition: 0.5s;
+  z-index: 5;
+}
+main section {
+  position: relative;
+}
+main section .buscar {
+  background: linear-gradient(to bottom, white, gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  padding: 50px;
+  flex-direction: column;
+}
+main section .buscar h2 {
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+main section .buscar .imgbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+main section .buscar .imgbox img {
+  max-width: 100%;
+}
+main section .buscar .search-bar {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+main section .buscar .search-bar input {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 25px;
+  background: rgba(225, 225, 225, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 15px 35px;
+  width: 100%;
+  outline: none;
+}
+main section .buscar .search-bar .actions {
+  display: flex;
+}
+main section .buscar .search-bar .actions button {
+  background: transparent;
+  border: none;
+  position: absolute;
+}
+main section .buscar .search-bar .actions button:nth-child(1) {
+  left: 7px;
+  top: 23%;
+}
+main section .buscar .search-bar .actions button:nth-child(2) {
+  right: 15px;
+  top: 25%;
+}
+main section .buscar .search-bar .actions button:hover a {
+  color: #b62c2c;
+}
+main section .buscar .search-bar .actions a {
+  transition: 0.5s;
+  color: #fff;
+  font-size: 2em;
+  z-index: 5;
+  text-decoration: none;
+}
+main section .autosdisp {
+  background: linear-gradient(to top, white, gray);
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section .autosdisp .tituloauto {
+  margin-top: 25px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  animation: tituloauto 2.5s linear infinite;
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+}
+main section .autosdisp .cardsautos .tresprimeros {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 25px 0px;
+}
+main section .autosdisp .cardsautos .tresprimeros .card {
+  position: relative;
+  margin-top: 30px;
+  background: rgba(225, 225, 225, 0.8);
+  max-width: 32%;
+  box-shadow: 0px -2px 5px rgba(24, 24, 24, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main section .autosdisp .cardsautos .tresprimeros .card:hover .blurr {
+  top: 65%;
+}
+main section .autosdisp .cardsautos .tresprimeros .card:hover::before {
+  transform: scale(0);
+}
+main section .autosdisp .cardsautos .tresprimeros .card:hover .contentautos h3 {
+  transform: scale(1);
+}
+main section .autosdisp .cardsautos .tresprimeros .card .imgbox {
+  padding: 0 5px;
+  max-width: 100%;
+}
+main section .autosdisp .cardsautos .tresprimeros .card .imgbox img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .autosdisp .cardsautos .tresprimeros .card .contentautos {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 800;
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos .tresprimeros .card .contentautos h3 {
+  position: relative;
+  top: -50%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos .tresprimeros .card .contentautos span {
+  font-style: italic;
+  font-weight: 500;
+}
+main section .autosdisp .cardsautos .tresprimeros .card::before {
+  content: "Pasa tu mouse por aquí";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 7;
+  color: black;
+  font-size: 1.3em;
+  font-weight: 700;
+  font-style: italic;
+  bottom: 3%;
+  text-align: center;
+  transform: scale(1);
+  transition: 0.3s;
+}
+main section .autosdisp .cardsautos .tresprimeros .card .blurr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  top: 80%;
+  left: 0;
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos .tressegundos {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 25px 0px;
+}
+main section .autosdisp .cardsautos .tressegundos #mustang .contentautos h3 {
+  position: relative;
+  top: 10%;
+  transition: 0.5s;
+  z-index: 1000;
+}
+main section .autosdisp .cardsautos .tressegundos #raptor .contentautos h3 {
+  position: relative;
+  top: -60%;
+  right: 30%;
+  transition: 0.5s;
+  z-index: 1000;
+}
+main section .autosdisp .cardsautos .tressegundos .card {
+  position: relative;
+  margin-top: 30px;
+  background: rgba(225, 225, 225, 0.8);
+  max-width: 32%;
+  box-shadow: 0px -2px 5px rgba(24, 24, 24, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main section .autosdisp .cardsautos .tressegundos .card:hover .blurr {
+  top: 65%;
+}
+main section .autosdisp .cardsautos .tressegundos .card:hover::before {
+  transform: scale(0);
+}
+main section .autosdisp .cardsautos .tressegundos .card:hover .contentautos h3 {
+  transform: scale(1);
+}
+main section .autosdisp .cardsautos .tressegundos .card .imgbox {
+  padding: 0 5px;
+  max-width: 100%;
+}
+main section .autosdisp .cardsautos .tressegundos .card .imgbox img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .autosdisp .cardsautos .tressegundos .card .contentautos {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 800;
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos .tressegundos .card .contentautos h3 {
+  position: relative;
+  top: -50%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+main section .autosdisp .cardsautos .tressegundos .card .contentautos span {
+  font-style: italic;
+  font-weight: 500;
+}
+main section .autosdisp .cardsautos .tressegundos .card::before {
+  content: "Pasa tu mouse por aquí";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 7;
+  color: black;
+  font-size: 1.3em;
+  font-weight: 700;
+  font-style: italic;
+  bottom: 3%;
+  text-align: center;
+  transform: scale(1);
+  transition: 0.3s;
+}
+main section .autosdisp .cardsautos .tressegundos .blurr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  top: 80%;
+  left: 0;
+  transition: 0.5s;
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tresprimeros {
+    padding: 30px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tresprimeros .card {
+    position: relative;
+    min-height: 350px;
+    min-width: 550px;
+  }
+  .tresprimeros .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tresprimeros .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tresprimeros .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos h3, .tresprimeros .card .contentautos span {
+    transform: scale(0);
+  }
+  .tressegundos {
+    padding: 30px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tressegundos .card {
+    position: relative;
+    min-height: 350px;
+    min-width: 550px;
+  }
+  .tressegundos .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tressegundos .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tressegundos .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos h3, .tressegundos .card .contentautos span {
+    transform: scale(0);
+  }
+}
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .tresprimeros {
+    padding: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tresprimeros .card {
+    position: relative;
+    min-height: 350px;
+    min-width: 550px;
+  }
+  .tresprimeros .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tresprimeros .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tresprimeros .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos h3, .tresprimeros .card .contentautos span {
+    transform: scale(0);
+  }
+  .tressegundos {
+    padding: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tressegundos .card {
+    position: relative;
+    min-height: 250px;
+    min-width: 350px;
+  }
+  .tressegundos .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tressegundos .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tressegundos .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos h3, .tressegundos .card .contentautos span {
+    transform: scale(0);
+  }
+}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .tresprimeros {
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tresprimeros .card {
+    position: relative;
+    min-height: 250px;
+    min-width: 350px;
+  }
+  .tresprimeros .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tresprimeros .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tresprimeros .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos h3, .tresprimeros .card .contentautos span {
+    transform: scale(0);
+  }
+  .tressegundos {
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tressegundos .card {
+    position: relative;
+    min-height: 250px;
+    min-width: 350px;
+  }
+  .tressegundos .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tressegundos .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tressegundos .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos h3, .tressegundos .card .contentautos span {
+    transform: scale(0);
+  }
+}
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  .buscar {
+    padding: 25px;
+  }
+  .buscar h2 {
+    text-align: center;
+  }
+  .buscar .search-bar {
+    width: 100%;
+    height: 100%;
+  }
+  .buscar .search-bar input::-moz-placeholder {
+    font-size: 0.8em;
+  }
+  .buscar .search-bar input::placeholder {
+    font-size: 0.8em;
+  }
+  .autosdisp {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  .tresprimeros {
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tresprimeros .card {
+    position: relative;
+    min-height: 150px;
+    min-width: 250px;
+  }
+  .tresprimeros .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tresprimeros .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tresprimeros .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tresprimeros .card .contentautos h3, .tresprimeros .card .contentautos span {
+    transform: scale(0);
+  }
+  .tressegundos {
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .tressegundos .card {
+    position: relative;
+    min-height: 150px;
+    min-width: 250px;
+  }
+  .tressegundos .card .imgbox {
+    position: absolute;
+    max-width: 100%;
+  }
+  .tressegundos .card .imgbox img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tressegundos .card::before {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .tressegundos .card .contentautos h3, .tressegundos .card .contentautos span {
+    transform: scale(0);
+  }
+}/*# sourceMappingURL=style.css.map */
